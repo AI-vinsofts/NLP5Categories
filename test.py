@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 
 set_url = set()
-categories = ["Cong Nghe", "Du Lich", "Am Thuc", "Quan Su", "Thoi Trang"]
+categories = [" ", "Cong Nghe", "Du Lich", "Am Thuc", "Quan Su", "Thoi Trang"]
 categoriesurl = ["",
                 "https://www.24h.com.vn/kham-pha-cong-nghe-c675.html?vpage=",
                 "https://www.24h.com.vn/du-lich-24h-c76.html?vpage=",
@@ -10,7 +10,6 @@ categoriesurl = ["",
                 "https://www.24h.com.vn/quan-su-c705.html?vpage=",
                 "https://www.24h.com.vn/the-gioi-thoi-trang-c672.html?vpage="]
 
-count = 0
 
 for n in range(1, 6):
     for i in range(1, 6):
@@ -24,6 +23,7 @@ for n in range(1, 6):
             set_url.add(link.find('a', href=True)['href'])
         linksarr = list(set_url)
         print(len(linksarr))
+        count = 0
         for link in linksarr:
             articlearr = []
             page = urllib.request.urlopen(link)
@@ -44,5 +44,4 @@ for n in range(1, 6):
             # CATEGORY FOLDER
             text_file = open(categories[n] + "/article_" + str(i) + str(count) + ".txt", "w", encoding="utf-8")
             text_file.write(str(articlearr))
-            del articlearr
         del linksarr
