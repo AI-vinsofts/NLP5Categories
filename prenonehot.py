@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
-# from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.feature_extraction.text import CountVectorizer
 from underthesea import sent_tokenize
-import numpy as np
+# import numpy as np
 import re
 import string
 import spacy
-
-nlp = spacy.load('vi_spacy_model')
 
 art = 'Ứng dụng My YANMAR có giao diện đơn giản với tông màu đỏ - trắng chủ đạo, gồm nhiều nội dung như video, tài liệu ' \
       'giới thiệu và hướng dẫn sử dụng, tích hợp hệ thống định vị thông minh SMARTASSIST (SA-R) được biết đến như một ' \
@@ -34,8 +30,22 @@ art = 'Ứng dụng My YANMAR có giao diện đơn giản với tông màu đ�
       'internet.- Bản quyềnBản quyền đối với nội dung của ứng dụng này thuộc về Yanmar Holding Co., Ltd. Nghiêm ' \
       'cấm sao chép, trích dẫn, truyền tải, phân phối, thay đổi, sửa đổi hoặc bổ sung trái phép dưới mọi hình thức. '
 
+# article = open("Cong Nghe/article_11.txt", "r", encoding="utf-8")
+# article = article.read()
+# article = str(article)[1:-1]
+
+# Sentence Segmention with Underthesea
+# article = sent_tokenize(article)
+# for i in article:
+#     print(i)
+# sent_tokenizer = article[2]                 # The third sentence
+# print(len(sent_tokenizer))                  # lengh of the third sentence (561)
+
+nlp = spacy.load('vi_spacy_model')
+
+
 def preprocessing_data(text):
-    text = re.sub(r'\d+', '', text)                         # remove number
+    text = re.sub(r'\d+', ' ', text)                         # remove number
     text = text.lower()                                     # lower case
     translator = str.maketrans('', '', string.punctuation)  # remove punctuation
     text = text.translate(translator)
@@ -45,35 +55,4 @@ def preprocessing_data(text):
     for token in doc:
         if not token.is_stop:
             tokens.append(str(token))
-    return tokens
-
-
-# article = open("Cong Nghe/article_11.txt", "r", encoding="utf-8")
-# article = article.read()
-# article = str(article)[1:-1]
-article = art.replace('.', '.  ')
-
-data = []
-
-# Sentence Segmention with Underthesea
-article = sent_tokenize(article)
-for sentence in article:
-    # print(sentence)
-    sentence = preprocessing_data(sentence)
-    data += sentence
-
-# print(data)
-values = np.array(data)
-print(values)
-# integer encode
-label_encoder = LabelEncoder()
-integer_encoded = label_encoder.fit_transform(values)
-print(integer_encoded)
-
-# binary encode
-onehot_encoder = OneHotEncoder(sparse=False)
-integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
-onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
-print(onehot_encoded)
-
-
+    return ' '.join(tokens)

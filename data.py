@@ -1,19 +1,18 @@
 from bs4 import BeautifulSoup
 import urllib.request
 
-set_url = set()
 categories = [" ", "Cong Nghe", "Du Lich", "Am Thuc", "Quan Su", "Thoi Trang"]
 categoriesurl = ["",
-                "https://www.24h.com.vn/kham-pha-cong-nghe-c675.html?vpage=",
-                "https://www.24h.com.vn/du-lich-24h-c76.html?vpage=",
-                "https://www.24h.com.vn/am-thuc-c460.html?vpage=",
-                "https://www.24h.com.vn/quan-su-c705.html?vpage=",
-                "https://www.24h.com.vn/the-gioi-thoi-trang-c672.html?vpage="]
-
+                 "https://www.24h.com.vn/kham-pha-cong-nghe-c675.html?vpage=",
+                 "https://www.24h.com.vn/du-lich-24h-c76.html?vpage=",
+                 "https://www.24h.com.vn/am-thuc-c460.html?vpage=",
+                 "https://www.24h.com.vn/quan-su-c705.html?vpage=",
+                 "https://www.24h.com.vn/the-gioi-thoi-trang-c672.html?vpage="]
 
 for n in range(1, 6):
     for i in range(1, 6):
         # LINK FROM ARRAY
+        set_url = set()
         urll = categoriesurl[n] + str(i)
         html_page = urllib.request.urlopen(urll)
         soupp = BeautifulSoup(html_page, "html.parser")
@@ -37,11 +36,13 @@ for n in range(1, 6):
                     'Phường 5, Quận 3, TP. Hồ Chí Minh. Tel: (84-28) 7300 2424 / Giấy phép số 332/GP – TT ĐT ngày cấp '
                     '22/01/2018 SỞ THÔNG TIN VÀ TRUYỀN THÔNG HÀ NỘI. Chịu trách nhiệm xuất bản: Phan Minh Tâm. '
                     'HOTLINE: 0965 08 24 24', ' ')
-                articlearr.append(art)              # Douma cho nay dung roi ban oi
-            articlearr = [''.join(articlearr)]
+                articlearr.append(art)  # Douma cho nay dung roi ban oi
+            articlearr = [' '.join(articlearr)]
             count = count + 1
-            print('Loading ' + str(count) + '...')
+            # print('Loading ' + str(count) + '...')
             # CATEGORY FOLDER
             text_file = open(categories[n] + "/article_" + str(i) + str(count) + ".txt", "w", encoding="utf-8")
             text_file.write(str(articlearr))
         del linksarr
+        del links
+        del set_url
