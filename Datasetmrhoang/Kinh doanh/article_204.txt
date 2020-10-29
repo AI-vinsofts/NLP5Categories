@@ -1,0 +1,9 @@
+Vô hiệu hóa tài khoản ngân hàng không hoạt động trong 90 ngày?
+
+Ngân hàng Nhà nước Việt Nam (NHNN) đang lấy ý kiến của các đơn vị, tổ chức, cá nhân đối với Dự thảo Thông tư sửa đổi, bổ sung một số điều của Thông tư số 47/2014/TT-NHNN ngày 31/12/2014 quy định các yêu cầu kỹ thuật về an toàn bảo mật đối với trang thiết bị phục vụ thanh toán thẻ ngân hàng.
+
+Theo Dự thảo, NHNN đề xuất thu hồi, loại bỏ hoặc vô hiệu hóa các tài khoản không sử dụng, hết hạn sử dụng, không hoạt động trong khoảng thời gian tối đa 90 ngày hoặc các tài khoản trong trạng thái không kích hoạt trong một khoảng thời gian. NHNN bổ sung thay đổi này nhằm giảm thiểu rủi ro an ninh mạng.
+Tại Thông tư số 47/2014/TT-NHNN trước đó, không quy định cụ thể số ngày không giao dịch, Thông tư chỉ quy định thu hồi, loại bỏ hoặc vô hiệu hóa các tài khoản không sử dụng, hết hạn sử dụng hoặc các tài khoản trong trạng thái không kích hoạt trong một khoảng thời gian.
+- Bổ sung quy định về ngăn chặn kết nối Internet của các máy trạm có quyền truy cập vào dữ liệu thẻ dạng rõ nhằm giảm thiểu rủi ro an ninh mạng liên quan đến lộ lọt dữ liệu thẻ.
+- Sửa đổi để phù hợp với sự thay đổi của quy định về mã hóa mạnh. Sử dụng các phương thức mã hóa mạnh và các giao thức bảo mật an toàn để bảo vệ dữ liệu xác thực thẻ trong quá trình truyền thông tin qua mạng kết nối với bên ngoài (mạng Internet, mạng không dây, mạng truyền thông di động và các mạng khác).
+- Bổ sung quy định về bảo vệ các biện pháp giám sát vật lý. Sử dụng camera hoặc có biện pháp khác để giám sát truy cập vật lý tới khu vực phòng máy chủ, khu vực in ấn phát hành, nơi lưu trữ, xử lý dữ liệu chủ thẻ. Camera hoặc biện pháp giám sát khác phải được bảo vệ khỏi việc phá hoại hoặc vô hiệu hóa. Các dữ liệu giám sát phải được lưu trữ tối thiểu 3 tháng...
