@@ -6,7 +6,7 @@ import pickle
 
 nlp = spacy.load('vi_spacy_model')
 nlp.max_length = 1300000
-categories = ['Bóng đá', 'Giáo dục', 'Kinh doanh', 'Showbiz', 'Xe cộ']
+# categories = ['Bóng đá', 'Giáo dục', 'Kinh doanh', 'Showbiz', 'Xe cộ']
 
 f = open('NLPnaivebayes.pickle', 'rb')
 nb = pickle.load(f)
