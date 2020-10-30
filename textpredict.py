@@ -15,12 +15,13 @@ nb = pickle.load(f)
 vectorizer = pickle.load(open("vector.pickel", "rb"))
 f.close()
 
-# PLEASE PASTE AN ARTICLE IN THE LINE DOWN BELOW INSIDE THE ' '
-test = '"Mỹ nhân cảnh nóng" khiến tình cũ Chi Pu say đắm vì quá gợi cảm là ai?...'
-test = [preprocessing.preprocessing_data(test)]
 
-# Testing encode
-testmatx = vectorizer.transform(test)
-encodetest = testmatx.toarray()
-print('Predicting class:', str(nb.predict(encodetest)[0]))
-print('Probability of d6 in each class:', nb.predict_proba(encodetest))
+def prediction(input):
+    test = [preprocessing.preprocessing_data(input)]
+    testmatx = vectorizer.transform(test)
+    encodetest = testmatx.toarray()
+    return str(nb.predict(encodetest)[0])
+
+# PLEASE PASTE AN ARTICLE DOWN HERE
+input = 'Vẻ nóng bỏng của người đẹp sinh năm 1990 khiến nhiều người trầm trồ.'
+print(prediction(input))
