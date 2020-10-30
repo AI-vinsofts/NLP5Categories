@@ -21,5 +21,5 @@ def prediction(input):
     return str(nb.predict(encodetest)[0])
 
 # PLEASE PASTE AN ARTICLE DOWN HERE
-input = 'Vẻ nóng bỏng của người đẹp sinh năm 1990 khiến nhiều người trầm trồ...'
-print(prediction(input))
+# input = 'Vẻ nóng bỏng của người đẹp sinh năm 1990 khiến nhiều người trầm trồ...'
+# print(prediction(input))
