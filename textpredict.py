@@ -11,10 +11,8 @@ categories = ['Bóng đá', 'Giáo dục', 'Kinh doanh', 'Showbiz', 'Xe cộ']
 f = open('NLPnaivebayes.pickle', 'rb')
 nb = pickle.load(f)
 
-# load pickle
 vectorizer = pickle.load(open("vector.pickel", "rb"))
 f.close()
-
 
 def prediction(input):
     test = [preprocessing.preprocessing_data(input)]
@@ -23,5 +21,5 @@ def prediction(input):
     return str(nb.predict(encodetest)[0])
 
 # PLEASE PASTE AN ARTICLE DOWN HERE
-input = 'Vẻ nóng bỏng của người đẹp sinh năm 1990 khiến nhiều người trầm trồ.'
+input = 'Vẻ nóng bỏng của người đẹp sinh năm 1990 khiến nhiều người trầm trồ...'
 print(prediction(input))
