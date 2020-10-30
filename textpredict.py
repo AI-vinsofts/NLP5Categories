@@ -14,8 +14,9 @@ nb = pickle.load(f)
 # load pickle
 vectorizer = pickle.load(open("vector.pickel", "rb"))
 f.close()
-# OPEN AN ARTICLE FROM TEXT.TXT
-test = open("text.txt", "r", encoding='utf-8').read()[1:-1]
+
+# PLEASE PASTE AN ARTICLE IN THE LINE DOWN BELOW INSIDE THE ' '
+test = '"Mỹ nhân cảnh nóng" khiến tình cũ Chi Pu say đắm vì quá gợi cảm là ai?...'
 test = [preprocessing.preprocessing_data(test)]
 
 # Testing encode
